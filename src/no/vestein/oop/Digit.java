@@ -2,55 +2,52 @@ package no.vestein.oop;
 
 public class Digit {
 
-	private int tallsystem;
+	public final int tallsystem;
 	private int siffer;
 	
-	Digit(int n) {
-		this.tallsystem = n;
+	public Digit(int tallsystem) {
+		this.tallsystem = tallsystem;
 	}
 	
 	@Override
 	public String toString() {
-		//return "Digit [tallsystem=" + tallsystem + ", siffer="
-		//		+ this.getChar() + "]";
 		return this.getChar();
 	}
 	
-	String getChar() {
-		if (this.siffer >= 10) {
-			return String.valueOf((char)(this.siffer - 10 +'A'));
-		}
-		return Integer.toString(this.siffer);
+	public String getChar() {
+		if (siffer >= 10) return String.valueOf((char)(siffer - 10 +'A'));
+		return Integer.toString(siffer);
 	}
 	
-	int getValue() {
+	public int getValue() {
 		return this.siffer;
 	}
 	
-	boolean increment() {
-		this.siffer = this.siffer + 1;
-		if (this.siffer == this.tallsystem) {
-			this.siffer = 0;
+	public boolean increment() {
+		siffer++;
+		if (siffer == tallsystem) {
+			siffer = 0;
 			return true;
 		}
 		return false;
 	}
 
 	public static void main(String[] args) {
-		Digit test = new Digit(16);
+		Digit n1 = new Digit(16);
+		Digit n2 = new Digit(16);
+		Digit n3 = new Digit(16);
 		
-		System.out.println(test);
-		
-		test.increment();
-		System.out.println(test);
-		
-		test.increment();
-		System.out.println(test);
-		
-		test.increment();
-		System.out.println(test);
-		
-		//System.out.println(String.valueOf((char)(test.getValue() +'A')));
+		for (int i = 0; i < n3.tallsystem; i++) {
+			for (int j = 0; j < n2.tallsystem; j++) {
+				for (int j2 = 0; j2 < n1.tallsystem; j2++) {
+					System.out.println(n3 + ":" + n2 + ":" + n1);
+					n1.increment();
+				}
+				n2.increment();
+			}
+			n3.increment();
+		}
+		System.out.println(n3 + ":" + n2 + ":" + n1);
 	}
 	
 }

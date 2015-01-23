@@ -2,11 +2,11 @@ package no.vestein.oop;
 
 public class UpOrDownCounter {
 
-	int end;
-	int counter;
-	int direction;
+	private int end;
+	private int counter;
+	private int direction;
 	
-	UpOrDownCounter(int start, int end) {
+	public UpOrDownCounter(int start, int end) {
 		this.end = end;
 		this.counter = start;
 		
@@ -15,33 +15,15 @@ public class UpOrDownCounter {
 		} else {
 			this.direction = -1;
 		}
-		
-		
 	}
 	
-	int getCounter() {
-		return this.counter;
+	public int getCounter() {
+		return counter;
 	}
 	
-	boolean count() {
-		if (this.counter != this.end) {
-			this.counter = this.counter + this.direction;
-		}
-		return this.counter != this.end;
-		
+	public boolean count() {
+		if (counter != end) counter += direction;
+		return counter != end;	
 	}
 	
-	public static void main(String[] args) {
-		UpOrDownCounter test = new UpOrDownCounter(1,3);
-		
-		System.out.println(test.counter);
-		System.out.println(test.count());
-		System.out.println(test.counter);
-		System.out.println(test.count());
-		System.out.println(test.counter);
-		System.out.println(test.count());
-		System.out.println(test.counter);
-		System.out.println(test.count());
-	}
-
 }
