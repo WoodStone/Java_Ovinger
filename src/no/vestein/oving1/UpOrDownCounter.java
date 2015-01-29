@@ -1,4 +1,4 @@
-package no.vestein.oop;
+package no.vestein.oving1;
 
 public class UpOrDownCounter {
 
@@ -10,7 +10,9 @@ public class UpOrDownCounter {
 		this.end = end;
 		this.counter = start;
 		
-		if (this.counter < this.end) {
+		if (start == end) {
+			throw new IllegalArgumentException("Lik start og sluttverdi");
+		} else if (start < end) {
 			this.direction = 1;
 		} else {
 			this.direction = -1;

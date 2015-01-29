@@ -1,4 +1,4 @@
-package no.vestein.oop;
+package no.vestein.oving1;
 
 public class Rectangle {
 
