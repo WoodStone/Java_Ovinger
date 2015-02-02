@@ -50,3 +50,7 @@ Thumbs.db
 *.iml
 *Test.java
 .classpath
+
+src/no/vestein/oving3/RPNCalcFX.fxml
+
+src/no/vestein/oving3/RPNCalcFX.java
