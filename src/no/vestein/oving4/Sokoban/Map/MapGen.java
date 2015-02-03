@@ -36,6 +36,16 @@ public class MapGen {
 			{'#', '#', '#', '#', '#', '#', '#'}
 			};
 	
+	char[][] level2 = {
+			{'#', '#', '#', '#', '#', '#', '#'},
+			{'#', '.', '@', '0', '#', '0', '#'},
+			{'#', '$', '*', '0', '$', '0', '#'},
+			{'#', '0', '0', '0', '$', '0', '#'},
+			{'#', '0', '0', '.', '0', '0', '#'},
+			{'#', '0', '0', '0', '0', '0', '#'},
+			{'#', '#', '#', '#', '#', '#', '#'}
+			};
+	
 	public Map<String, Block> getMap() {
 		return map;
 	}
@@ -50,13 +60,12 @@ public class MapGen {
 		return map.get(x + "." + y);
 	}
 	
-	public String getPlayerPosition() {
-		for (Map.Entry<String, Block> entry : map.entrySet()) {
-			if (entry.getValue() instanceof BlockPlayer) {
-				return entry.getKey();
-			}
-		}
-		return "";
+	public BlockPlayer getPlayer() {
+		return (BlockPlayer) map.get("player");
+	}
+	
+	public void setPlayer(BlockPlayer player) {
+		map.put("player", player);
 	}
 	
 	Map<String, Block> generateObjects() {
@@ -77,7 +86,7 @@ public class MapGen {
 					map.put(j + "." + i, goal);
 				} else if (level[i][j] == '@') {
 					BlockPlayer player = new BlockPlayer(mapX + (j * 20), mapY + (i * 20));
-					map.put(j + "." + i + "player", player);
+					map.put("player", player);
 					System.out.println(j + "." + i);
 				}
 			}

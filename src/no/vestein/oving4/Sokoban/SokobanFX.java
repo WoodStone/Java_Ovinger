@@ -16,55 +16,50 @@ import javafx.stage.Stage;
 public class SokobanFX extends Application{
 
 	public static MapGen mapGen = new MapGen();
-	public static Map<String, Block> map;
 	public static Pane shapesPane;
 	EventTextField eventText = new EventTextField();
 	
 	@Override
-    public void start(Stage stage) throws Exception {
+	public void start(Stage stage) throws Exception {
 		
-//        Pane root = new Pane(); // Root of the scene graph
+//		Pane root = new Pane(); // Root of the scene graph
 		BorderPane root = new BorderPane();
-        
+		
 		shapesPane = new Pane();
 		shapesPane.setPrefSize(300, 300);
 		
 		eventText.init();		
-	    shapesPane.getChildren().add(eventText.getTextField());
-	    
-        genMap(shapesPane);
+		shapesPane.getChildren().add(eventText.getTextField());
+		
+		genMap(shapesPane);
 		root.setCenter(shapesPane);
 		
 		GameState.init();
-        
-        Scene scene = new Scene(root, 500, 500);
-        stage.setScene(scene);
-        stage.setTitle("Sokoban");
-        stage.show();
-    }
+		
+		Scene scene = new Scene(root, 500, 500);
+		stage.setScene(scene);
+		stage.setTitle("Sokoban");
+		stage.show();
+	}
 	
 	private void genMap(Pane shapesPane) {
 		mapGen.generate();
-		
 		Map<String, Block> map = mapGen.getMap();
-		SokobanFX.map = map;
 		for (Block value : map.values()) {
 			if (! (value instanceof BlockPlayer)) {
 				shapesPane.getChildren().add(value.getObject());
 			}
 		}
-		shapesPane.getChildren().add(map.get(mapGen.getPlayerPosition()).getObject());
-		
-//		System.out.println(mapGen.getBlock(2, 1));
+		shapesPane.getChildren().add(mapGen.getPlayer().getObject());
 		
 	}
 	
-	public MapGen getMapGen() {
+	public static MapGen getMapGen() {
 		return mapGen;
 	}
 	
-    public static void main(String[] args) {
-        launch(SokobanFX.class, args);
+	public static void main(String[] args) {
+    	launch(SokobanFX.class, args);
     }
 	
 }
