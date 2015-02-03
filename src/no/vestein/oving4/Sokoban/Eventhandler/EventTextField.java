@@ -1,6 +1,6 @@
-package no.vestein.oving4.Sokoban.Eventhandler;
+package no.vestein.oving4.sokoban.eventhandler;
 
-import no.vestein.oving4.Sokoban.Map.Movement;
+import no.vestein.oving4.sokoban.map.Movement;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextField;

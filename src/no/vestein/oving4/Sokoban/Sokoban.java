@@ -1,4 +1,4 @@
-package no.vestein.oving4.Sokoban;
+package no.vestein.oving4.sokoban;
 
 public class Sokoban {
 	

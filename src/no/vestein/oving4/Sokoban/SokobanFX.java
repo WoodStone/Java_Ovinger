@@ -1,12 +1,12 @@
-package no.vestein.oving4.Sokoban;
+package no.vestein.oving4.sokoban;
 
 import java.util.Map;
 
-import no.vestein.oving4.Sokoban.Blocks.Block;
-import no.vestein.oving4.Sokoban.Blocks.BlockPlayer;
-import no.vestein.oving4.Sokoban.Eventhandler.EventTextField;
-import no.vestein.oving4.Sokoban.Eventhandler.GameState;
-import no.vestein.oving4.Sokoban.Map.MapGen;
+import no.vestein.oving4.sokoban.blocks.Block;
+import no.vestein.oving4.sokoban.blocks.BlockPlayer;
+import no.vestein.oving4.sokoban.eventhandler.EventTextField;
+import no.vestein.oving4.sokoban.eventhandler.GameState;
+import no.vestein.oving4.sokoban.map.MapGen;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;

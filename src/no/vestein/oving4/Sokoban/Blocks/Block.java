@@ -1,4 +1,4 @@
-package no.vestein.oving4.Sokoban.Blocks;
+package no.vestein.oving4.sokoban.blocks;
 
 import javafx.scene.shape.Shape;
 

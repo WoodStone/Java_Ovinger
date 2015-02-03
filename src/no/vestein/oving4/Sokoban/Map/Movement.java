@@ -1,12 +1,12 @@
-package no.vestein.oving4.Sokoban.Map;
+package no.vestein.oving4.sokoban.map;
 
-import no.vestein.oving4.Sokoban.SokobanFX;
-import no.vestein.oving4.Sokoban.Blocks.Block;
-import no.vestein.oving4.Sokoban.Blocks.BlockGoal;
-import no.vestein.oving4.Sokoban.Blocks.BlockGreenBox;
-import no.vestein.oving4.Sokoban.Blocks.BlockPlayer;
-import no.vestein.oving4.Sokoban.Blocks.BlockRedBox;
-import no.vestein.oving4.Sokoban.Blocks.BlockWall;
+import no.vestein.oving4.sokoban.SokobanFX;
+import no.vestein.oving4.sokoban.blocks.Block;
+import no.vestein.oving4.sokoban.blocks.BlockGoal;
+import no.vestein.oving4.sokoban.blocks.BlockGreenBox;
+import no.vestein.oving4.sokoban.blocks.BlockPlayer;
+import no.vestein.oving4.sokoban.blocks.BlockRedBox;
+import no.vestein.oving4.sokoban.blocks.BlockWall;
 
 public class Movement {
 
