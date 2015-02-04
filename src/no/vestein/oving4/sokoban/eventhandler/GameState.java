@@ -10,14 +10,14 @@ public class GameState {
 	private static int numberOfBlocksRequired;
 	
 	public static void init() {
-		for (Block entry : SokobanFX.mapGen.getMap().values()) {
+		for (Block entry : SokobanFX.level.getMap().getMap().values()) {
 			if (entry instanceof BlockGreenBox || entry instanceof BlockGoal) numberOfBlocksRequired++;
 		}
 	}
 	
 	public static boolean checkForWin() {
 		int n = 0;
-		for (Block entry : SokobanFX.mapGen.getMap().values()) {
+		for (Block entry : SokobanFX.level.getMap().getMap().values()) {
 			if (entry instanceof BlockGreenBox) n++;
 		}
 		return n == numberOfBlocksRequired;

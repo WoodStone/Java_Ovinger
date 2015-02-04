@@ -10,20 +10,17 @@ import no.vestein.oving4.sokoban.blocks.BlockPlayer;
 import no.vestein.oving4.sokoban.blocks.BlockRedBox;
 import no.vestein.oving4.sokoban.blocks.BlockWall;
 
-public class MapGen {
+public class SokobanMap {
 
-	/*
-	 * # = vegg
-	 * 0 = tom rute
-	 * . = målrute
-	 * $ = boks
-	 * * = boks på målrute
-	 * @ = spiller
-	 */
+	private int posX;
+	private int posY;
+	private Map<String, Block> map;
 	
-	private Map<String, Block> map = new HashMap<>();
-	private final int mapX = 50;
-	private final int mapY = 50;
+	public SokobanMap(int posX, int posY) {
+		this.posX = posX;
+		this.posY = posY;
+		this.map = generate();
+	}
 	
 	public Map<String, Block> getMap() {
 		return map;
@@ -51,19 +48,19 @@ public class MapGen {
 		for (int i = 0; i < level.length; i++) {
 			for (int j = 0; j < level.length; j++) {
 				if (level[i][j] == '#') {
-					BlockWall wall = new BlockWall(mapX + (j * 20), mapY + (i * 20));
+					BlockWall wall = new BlockWall(posX + (j * 20), posY + (i * 20));
 					map.put(j + "." + i, wall);
 				} else if (level[i][j] == '*') {
-					BlockGreenBox box = new BlockGreenBox(mapX + (j * 20), mapY + (i * 20));
+					BlockGreenBox box = new BlockGreenBox(posX + (j * 20), posY + (i * 20));
 					map.put(j + "." + i, box);
 				} else if (level[i][j] == '$') {
-					BlockRedBox box = new BlockRedBox(mapX + (j * 20), mapY + (i * 20));
+					BlockRedBox box = new BlockRedBox(posX + (j * 20), posY + (i * 20));
 					map.put(j + "." + i, box);
 				} else if (level[i][j] == '.') {
-					BlockGoal goal = new BlockGoal(mapX + (j * 20), mapY + (i * 20));
+					BlockGoal goal = new BlockGoal(posX + (j * 20), posY + (i * 20));
 					map.put(j + "." + i, goal);
 				} else if (level[i][j] == '@') {
-					BlockPlayer player = new BlockPlayer(mapX + (j * 20), mapY + (i * 20));
+					BlockPlayer player = new BlockPlayer(posX + (j * 20), posY + (i * 20));
 					map.put("player", player);
 					System.out.println(j + "." + i);
 				}
@@ -71,5 +68,6 @@ public class MapGen {
 		}
 		return map;
 	}
+	
 	
 }
