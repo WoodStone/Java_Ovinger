@@ -1,5 +1,6 @@
 package no.vestein.oving4.sokoban.eventhandler;
 
+import no.vestein.oving4.sokoban.SokobanFX;
 import no.vestein.oving4.sokoban.map.Movement;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -7,9 +8,9 @@ import javafx.scene.control.TextField;
 
 public class EventTextField {
 
-	private TextField textField  = new TextField();
+	private static TextField textField  = new TextField();
 	
-	public void init() {
+	public static void init() {
 	    textField.setOnAction(new EventHandler<ActionEvent>() {
 	        @Override
 	        public void handle(ActionEvent arg0) {
@@ -19,9 +20,10 @@ public class EventTextField {
 				}
 	        }
 	    });
+	    SokobanFX.shapesPane.getChildren().add(textField);
 	}
 	
-	public TextField getTextField() {
+	public static TextField getTextField() {
 		return textField;
 	}
 	

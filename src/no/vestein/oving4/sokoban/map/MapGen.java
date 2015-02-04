@@ -20,7 +20,7 @@ public class MapGen {
 	 * * = boks på målrute
 	 * @ = spiller
 	 */
-	
+	/*
 	private Map<String, Block> map = new HashMap<>();
 	private final int mapX = 50;
 	private final int mapY = 50;
@@ -71,5 +71,6 @@ public class MapGen {
 		}
 		return map;
 	}
+	*/
 	
 }

@@ -7,14 +7,14 @@ import no.vestein.oving4.sokoban.blocks.BlockPlayer;
 
 public class Level {
 
-	SokobanMap map;
+	private static SokobanMap map;
 	
-	public void init() {
+	public static void init() {
 		map = new SokobanMap(50, 50);
 		genMap(SokobanFX.shapesPane, map);
 	}
 	
-	public SokobanMap getMap() {
+	public static SokobanMap getMap() {
 		return map;
 	}
 	
