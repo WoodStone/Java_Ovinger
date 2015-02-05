@@ -23,8 +23,4 @@ public class EventTextField {
 	    SokobanFX.shapesPane.getChildren().add(textField);
 	}
 	
-	public static TextField getTextField() {
-		return textField;
-	}
-	
 }
