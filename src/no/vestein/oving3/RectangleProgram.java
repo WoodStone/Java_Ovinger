@@ -32,6 +32,7 @@ public class RectangleProgram {
 				}
 			}
 		}
+		scanner.close();
 	}
 
 	private static void doCommand(Rectangle rect, String[] input) {
