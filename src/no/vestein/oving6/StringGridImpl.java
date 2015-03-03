@@ -6,8 +6,8 @@ import java.util.Iterator;
 public class StringGridImpl implements IStringGrid {
 
 	private final boolean rowMajor;
-	private int rowCount;
-	private int coloumnCount;
+	private final int rowCount;
+	private final int coloumnCount;
 	private String[][] grid;
 	
 	public StringGridImpl(int rowCount, int coloumnCount) {
@@ -21,25 +21,23 @@ public class StringGridImpl implements IStringGrid {
 		this.grid = new String[rowCount][coloumnCount];
 	}
 	
-	@Override
 	public int getRowCount() {
 		return rowCount;
 	}
 
-	@Override
 	public int getColumnCount() {
 		return coloumnCount;
 	}
 
-	@Override
 	public String getElement(int row, int column) {
-		if (row < 0 || row > rowCount || column < 0 || column > coloumnCount) throw new IllegalArgumentException();
+		if (row < 0 || row > rowCount || column < 0 || column > coloumnCount)
+			throw new IllegalArgumentException();
 		return grid[row][column];
 	}
 
-	@Override
 	public void setElement(int row, int column, String element) {
-		if (row < 0 || row > rowCount || column < 0 || column > coloumnCount) throw new IllegalArgumentException();
+		if (row < 0 || row > rowCount || column < 0 || column > coloumnCount)
+			throw new IllegalArgumentException();
 		grid[row][column] = element;
 	}
 
